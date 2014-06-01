@@ -222,7 +222,7 @@
 
         var allComments = document.querySelectorAll("[itemprop=comment]");
         for (var i = 0; i < allComments.length; ++i) {
-            allComments[i].style.height = allComments[i].clientHeight + 'px';
+            allComments[i].style.height = allComments[i].clientHeight + 10 + 'px';
         }
 
         commentForm.onsubmit = function (e) {

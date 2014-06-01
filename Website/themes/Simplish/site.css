@@ -10,12 +10,19 @@
     }
 }
 
+@font-face
+{
+    font-family: JukeBox;
+    src: url(/css/fonts/JUKEBOX.ttf);
+}
+
 html, body {
     height: 100%;
 }
 
 body {
-    font: 1.8em/1.5 'Century Gothic', Verdana, Geneva, 'DejaVu Sans', sans-serif;
+    /*font: 1.8em/1.5 'Century Gothic', Verdana, Geneva, 'DejaVu Sans', sans-serif;*/
+    font: 1.8em/1.5;
     margin: 0;
 }
 
@@ -24,7 +31,7 @@ img, video, iframe {
 }
 
 a {
-    color: #3277b3;
+    /*color: #3277b3;*/
 }
 
 .container {
@@ -32,16 +39,22 @@ a {
     padding-bottom: 35px;
 }
 
-    .container > div > header {
+    .container > header {
         border: none;
         text-align: center;
         margin: 0 0 3em 0;
     }
 
-        .container > div > header a {
+        .container > header a {
+            font-family: JukeBox;
             font-size: 4em;
-            color: #000;
+            /*color: #000;*/
         }
+
+            .container > header a:hover {
+                text-decoration: none;
+                border-bottom: 1px dotted;
+            }
 
 div[role=main] {
     margin-bottom: 2em;
@@ -52,23 +65,18 @@ div[role=main] {
     margin-top: 2em;
 }
 
-input[type], button, textarea {
+/*input[type], button, textarea {
     font: inherit !important;
-}
+}*/
 
 /*#region Post */
 
 .post header h1 {
     margin: 0 0 3px 0;
-    font-size: 14px;
-}
-
-.jumbotron h1, .jumbotron .h1 {
-    font-size: 50px;
 }
 
 .post header a {
-    /*color: #000;*/
+    color: #000;
 }
 
 .post header div {
@@ -138,18 +146,18 @@ input[type], button, textarea {
     transition: height .5s ease-in-out;
 }
 
-    #comments article div {
+    #comments article > div {
         padding-left: 70px;
     }
 
-        #comments article div p {
+        #comments article > div > p {
             border: 1px solid #d3d3d3;
             border-radius: 5px;
             padding: 7px;
             position: relative;
         }
 
-            #comments article div p:before {
+            #comments article > div > p:before {
                 content: "";
                 position: absolute;
                 top: 10px;
@@ -159,7 +167,7 @@ input[type], button, textarea {
                 border-color: transparent #d3d3d3;
             }
 
-            #comments article div p:after {
+            #comments article > div > p:after {
                 content: "";
                 position: absolute;
                 top: 10px;
@@ -169,13 +177,20 @@ input[type], button, textarea {
                 border-color: transparent #ffffff;
             }
 
-    #comments article.self div p {
+    #comments article.self > div > p {
         background: #f7f7f7;
+        color: #444;
     }
 
-        #comments article.self div p:after {
+        #comments article.self > div > p:after {
             border-color: transparent #f7f7f7;
         }
+
+    #comments article > div .deleteAndApproveButtonWrapper {
+        text-align: right;
+        height: 30px;
+        position: static;
+    }
 
     #comments article [itemprop='commentText'] {
         margin: 0;
@@ -206,6 +221,14 @@ input[type], button, textarea {
     }
 
 /*#endregion */
+
+.btn-group-xxs > .btn {
+    padding: 4px 8px !important;
+    /*padding: 1px 3px !important;*/
+    font-size: 9px !important;
+    line-height: 1.2 !important;
+    border-radius: 2px !important;
+}
 
 /*#region Comment form */
 
@@ -245,8 +268,4 @@ footer {
 
 .slideClone img {
     float: left;
-}
-
-.excerpt {
-    font-size: 14px;
 }
