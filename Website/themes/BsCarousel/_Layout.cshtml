@@ -46,7 +46,7 @@
 </head>
 <!-- NAVBAR
 ================================================== -->
-<body>
+<body itemscope itemtype="http://schema.org/Blog" class="@(User.Identity.IsAuthenticated ? "admin": null)">
 
     <!-- Carousel
     ================================================== -->
@@ -129,7 +129,7 @@
                 }
                 <span>
                     Copyright &copy; @DateTime.Now.Year
-                    <a href="http://madskristensen.net" itemprop="url name">Mads Kristensen</a>
+                    <a href="http://danielmcfarland.net" itemprop="url name">Daniel McFarland</a>
                 </span>
             </footer>
         </div>
